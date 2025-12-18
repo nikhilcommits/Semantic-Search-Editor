@@ -1,0 +1,114 @@
+.line-viewer-container {
+  display: flex;
+  flex-direction: column;
+  background: #1e1e1e;
+  border: 1px solid #3c3c3c;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.line-viewer-header {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #3c3c3c;
+  background-color: #2d2d30;
+}
+
+.line-viewer-header h2 {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #cccccc;
+  font-weight: 500;
+}
+
+.line-viewer-content {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 500px;
+  background: #1e1e1e;
+}
+
+.line-viewer-empty {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: #858585;
+  font-size: 0.875rem;
+}
+
+.line-item {
+  display: flex;
+  padding: 0;
+  border-bottom: 1px solid #2d2d30;
+  transition: background-color 0.1s ease;
+  min-height: 20px;
+}
+
+.line-item:hover {
+  background-color: #2a2d2e;
+}
+
+.line-item.highlighted {
+  background-color: #4d3800 !important;
+  animation: highlight-pulse 0.3s ease-in-out;
+}
+
+@keyframes highlight-pulse {
+  0%, 100% {
+    background-color: #4d3800;
+  }
+  50% {
+    background-color: #665020;
+  }
+}
+
+.line-number {
+  flex-shrink: 0;
+  min-width: 50px;
+  padding: 0 16px 0 8px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 20px;
+  color: #858585;
+  text-align: right;
+  background-color: #1e1e1e;
+  user-select: none;
+}
+
+.line-text {
+  flex: 1;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 20px;
+  color: #d4d4d4;
+  white-space: pre;
+  overflow-x: auto;
+  padding: 0 16px 0 8px;
+}
+
+.line-text em {
+  color: #858585;
+  font-style: italic;
+}
+
+/* Scrollbar styling - VS Code style */
+.line-viewer-content::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.line-viewer-content::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.line-viewer-content::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 0;
+}
+
+.line-viewer-content::-webkit-scrollbar-thumb:hover {
+  background: #4e4e4e;
+}
+
+.line-viewer-content::-webkit-scrollbar-corner {
+  background: #1e1e1e;
+}
